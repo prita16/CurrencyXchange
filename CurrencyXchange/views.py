@@ -14,7 +14,6 @@ from rest_framework.parsers import MultiPartParser, FileUploadParser
 
 from rest_framework.views import APIView
 from rest_framework import status
-from .serializers import FileSerializer
 
 class Signup(View):
 	"""Class Based API for User Auth SignUp."""

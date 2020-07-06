@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "ee79c799-1144-4e59-976f-1e9383a64e23",
+		"name": "CurrencyXchange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "convert_cuurency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://free.currencyconverterapi.com/api/v5/convert?q=USD_INR&compact=ultra&apiKey=698ea915b459fda1bc68",
+					"protocol": "http",
+					"host": [
+						"free",
+						"currencyconverterapi",
+						"com"
+					],
+					"path": [
+						"api",
+						"v5",
+						"convert"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "USD_INR"
+						},
+						{
+							"key": "compact",
+							"value": "ultra"
+						},
+						{
+							"key": "apiKey",
+							"value": "698ea915b459fda1bc68"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "testuser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testuser",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "testuser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "testuser",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/signin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create wallet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "testuser",
+							"type": "text"
+						},
+						{
+							"key": "wallet_amount",
+							"value": "100",
+							"description": "digits only",
+							"type": "text"
+						},
+						{
+							"key": "payment_mode",
+							"value": "card",
+							"description": "netbanking or card",
+							"type": "text"
+						},
+						{
+							"key": "currency_type",
+							"value": "EUR",
+							"description": "INR, USD,AUD,EUR",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/create-wallet",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"create-wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read wallet balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/read-wallet?username=testuser",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"read-wallet"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "testuser"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update wallet balance",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "testuser",
+							"type": "text"
+						},
+						{
+							"key": "add_amount",
+							"value": "100",
+							"description": "only digits",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/update-wallet",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"update-wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currecy convert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "testuser",
+							"type": "text"
+						},
+						{
+							"key": "currency_convert_to",
+							"value": "INR",
+							"description": "INR,USD,AUD,EUR",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/convert-currency",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"convert-currency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload photo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "testuser",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/parita/index.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/upload",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
