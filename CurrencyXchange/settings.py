@@ -25,7 +25,7 @@ SECRET_KEY = '1q+fj&bwd_xg)hryszgis=$p7oxp17##esem*-1=^ccbls9y2^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'CurrencyXchange'
 ]
 
 MIDDLEWARE = [
@@ -75,11 +76,12 @@ WSGI_APPLICATION = 'CurrencyXchange.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '/etc/mysql/my.cnf',
+        },
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -113,8 +115,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+# myfile = request.FILES['myfile']
+#         fs = FileSystemStorage()
+#         filename = fs.save(myfile.name, myfile)
+#         uploaded_file_url = fs.url(filename)
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
